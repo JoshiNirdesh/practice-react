@@ -4,8 +4,8 @@ const TextForm = (props) => {
   const [text, setText] = useState("Enter your text here");
 
   const handleCLick = () => {
-    console.log("Uppercase Clicked");
-    setText("You have clicked uppercase");
+    let newText = text.toLocaleUpperCase();
+    setText(newText);
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
