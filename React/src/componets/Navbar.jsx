@@ -3,7 +3,9 @@ import React from "react";
 const Navbar = (props) => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {props.title}
@@ -43,6 +45,22 @@ const Navbar = (props) => {
                 Search
               </button>
             </form> */}
+            <div
+              class={`form-check form-switch text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+            >
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="switchCheckDefault"
+                onClick={props.toggleMode}
+              />
+              <label class="form-check-label" for="switchCheckDefault">
+                Enable Darkmode
+              </label>
+            </div>
           </div>
         </div>
       </nav>
