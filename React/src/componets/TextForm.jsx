@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const TextForm = (props) => {
-  const [text, setText] = useState("Enter your text here");
+  const [text, setText] = useState("");
 
   const handleUpCLick = () => {
     let newText = text.toLocaleUpperCase();
@@ -35,9 +35,9 @@ const TextForm = (props) => {
         </button>
       </div>
       <div className="container my-3">
-        <h1>Your Text Summary</h1>
+        <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} words, {text.length}characters
+          {text.split(" ").length - 1} words, {text.length}characters
         </p>
         <p>{0.008 * text.split(" ").length}Minutes Read</p>
         <h2>Preview</h2>
